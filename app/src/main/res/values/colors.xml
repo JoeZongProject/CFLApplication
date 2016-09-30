@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/mainColor</color>
+    <color name="colorPrimaryDark">@color/mainColor</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#333333</color>
+    <color name="gray">#999999</color>
+    <color name="darkGray">#646769</color>
+    <color name="transparent">#00000000</color>
+    <color name="font_gray1">#b1c6cc</color>
+    <color name="lightGray">#cfcfcf</color>
+    <color name="backgroudColor">#eaeaea</color>
+    <color name="actionBarLine">#e5e5e5</color>
+    <color name="mainColor">#10A1B4</color>
+    <color name="textHintColor">#dedede</color>
+    <color name="listItemClickColor">#e5e5e5</color>
+</resources>

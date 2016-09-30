@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8'?>
+<node id='root'>
+  <node id='loginResult' desc='登录结果'>
+    <node value='0' desc='登录成功'></node>
+    <node value='1' desc='该帐号不存在'></node>
+    <node value='2' desc='密码有误请重新输入'></node>
+    <node value='3' desc='密码已过期'></node>
+    <node value='4' desc='帐号异常'></node>
+    <node value='5' desc='未被受权的帐号'></node>
+  </node>
+  <node id='roleId' desc='角色编号'>
+    <node value='1' desc='理财顾问'></node>
+    <node value='2' desc='销售主管'></node>
+    <node value='3' desc='门店经理'></node>
+    <node value='4' desc='销售经理'></node>
+    <node value='5' desc='公司管理层'></node>
+    <node value='6' desc='集团管理人员'></node>
+  </node>
+  <node id='idCardVerify' desc='身份证校验'>
+    <node value='0' desc='验证成功'></node>
+    <node value='1' desc='锁定中'></node>
+    <node value='2' desc='关注名单'></node>
+    <node value='3' desc='30天交单限制'></node>
+    <node value='4' desc='90天交单限制'></node>
+    <node value='5' desc='不符合加贷条件'></node>
+    <node value='6' desc='不符合再贷条件'></node>
+  </node>
+  <node id='productPeriod' desc='贷款类型'>
+    <node value='1' desc='无抵押贷款'>
+      <node id='kind' desc='产品种类'>
+        <node value='1' desc='房易贷'>
+          <node id='productPeriod' desc='产品可选还款周期'>
+            <node value='6' desc='6个月'></node>
+            <node value='12' desc='12个月'></node>
+            <node value='18' desc='18个月'></node>
+            <node value='24' desc='24个月'></node>
+            <node value='36' desc='36个月'></node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node value='2' desc='抵押车贷'></node>
+    <node value='3' desc='抵押房贷'></node>
+  </node>
+  <node id='idTypeFilter' desc='编号类型筛选'>
+    <node value='1' desc='身份证'></node>
+    <node value='2' desc='业务单号'></node>
+  </node>
+  <node id='periodFilter' desc='已申请时间筛选'>
+    <node value='0' desc='全部时间'></node>
+    <node value='3' desc='近3天'></node>
+    <node value='7' desc='近7天'></node>
+    <node value='30' desc='近30天'></node>
+    <node value='90' desc='近90天'></node>
+  </node>
+  <node id='stepFilter' desc='订单步骤'>
+    <node value='0' desc='全选'></node>
+    <node value='1' desc='预交单'></node>
+    <node value='2' desc='审核'></node>
+    <node value='3' desc='签约'></node>
+    <node value='4' desc='放款'></node>
+    <node value='5' desc='贷后'></node>
+  </node>
+  <node id='msgDateFilter' desc='消息日期筛选'>
+    <node value='0' desc='全选'></node>
+    <node value='1' desc='当天'></node>
+    <node value='3' desc='近3天'></node>
+    <node value='30' desc='近1月'></node>
+  </node>
+  <node id='msgTypeFilter' desc='消息类型筛选'>
+    <node value='0' desc='全选'></node>
+    <node value='1' desc='补资料提醒'></node>
+    <node value='2' desc='征信有效期提醒'></node>
+    <node value='3' desc='审核通过消息提醒'></node>
+    <node value='4' desc='审核拒绝消息提醒'></node>
+    <node value='5' desc='逾期消息提醒'></node>
+  </node>
+  <node id='msgIsReadFilter' desc='消息已读筛选'>
+    <node value='0' desc='全选'></node>
+    <node value='1' desc='已读'></node>
+    <node value='2' desc='未读'></node>
+  </node>
+  <node id='newsType' desc='新闻类型'>
+    <node value='1' desc='主推新闻'></node>
+    <node value='2' desc='业务信息'></node>
+    <node value='3' desc='公司新闻'></node>
+    <node value='4' desc='最新政策'></node>
+  </node>
+  <node id='preOrderStatus' desc='预交单状态'>
+    <node value='1' desc='暂存'></node>
+    <node value='2' desc='主管审核'></node>
+    <node value='3' desc='主管退回'></node>
+  </node>
+  <node id='idType' desc='编号类型'>
+    <node value='1' desc='预交单编号'></node>
+    <node value='2' desc='订单编号'></node>
+  </node>
+  <node id='fileType' desc='文件类型'>
+    <node value='1' desc='身份证'></node>
+    <node value='2' desc='申请表'></node>
+    <node value='3' desc='附件'></node>
+  </node>
+  <node id='status' desc='操作结果'>
+    <node value='0' desc='操作成功'></node>
+    <node value='1' desc='操作失败'></node>
+    <node value='-1' desc='系统异常'></node>
+    <node value='-99' desc='用户验证错误'></node>
+  </node>
+  <node id='passwordResult' desc='密码操作结果'>
+    <node value='0' desc='修改成功'></node>
+    <node value='1' desc='密码错误'></node>
+    <node value='2' desc='新密码过于简单'></node>
+  </node>
+  <node id='orderStatus' desc='订单状态'>
+    <node value='1' desc='申请中'></node>
+    <node value='2' desc='审核中'></node>
+    <node value='3' desc='审核拒绝'></node>
+    <node value='4' desc='签约中'></node>
+    <node value='5' desc='签约拒绝'></node>
+    <node value='6' desc='放款中'></node>
+    <node value='7' desc='贷后'></node>
+    <node value='8' desc='面鉴中'></node>
+    <node value='9' desc='面鉴拒绝'></node>
+    
+  </node>
+  <node id='result' desc='审核结果'>
+    <node value='1' desc='审核中'></node>
+    <node value='2' desc='审核通过'></node>
+    <node value='3' desc='审核拒绝'></node>
+  </node>
+</node>

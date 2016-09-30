@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/actionbar"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbarHeight"
+        android:background="@color/mainColor">
+
+        <include layout="@layout/view_button_white_back" />
+
+        <TextView
+            android:id="@+id/actionbarTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="@dimen/actionbarTitleSize"
+            android:textColor="@color/white"
+            android:text="设置标题"/>
+
+        <include layout="@layout/view_button_right" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/actionBarLine"
+        />
+</LinearLayout>

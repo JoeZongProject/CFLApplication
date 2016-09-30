@@ -1,0 +1,24 @@
+package com.joe.cflapplication.ui.base.annotation;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+/**
+ * Created by zongdongdong on 16/7/25.
+ */
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Layout {
+    int value() default -1;
+
+    int id() default -1;
+
+    String rightButton() default "";
+
+    int rightButtonRes() default -1;
+
+    String title() default "";
+
+}

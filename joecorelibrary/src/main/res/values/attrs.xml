@@ -1,0 +1,259 @@
+<resources>
+
+    <!-- require boolean value to decide whether requestFocus for view. -->
+    <attr name="requestFocus" format="boolean" />
+    <!-- require ItemView {@link me.tatarka.bindingcollectionadapter.ItemView} or ItemViewSelector {{@link me.tatarka.bindingcollectionadapter.ItemViewSelector}.} -->
+    <attr name="itemView" format="reference" />
+    <!-- require List<ViewModel> bind to ItemView to presentation.-->
+    <attr name="items" format="reference" />
+    <!-- require a adapter which type of BindingRecyclerViewAdapter<T> to AdapterView-->
+    <attr name="adapter" format="reference" />
+
+    <attr name="onScrollChangeCommand" format="reference" />
+    <attr name="onScrollStateChangedCommand" format="reference" />
+    <attr name="uri" format="string" />
+    <attr name="onTouchCommand" format="reference" />
+
+    <!-- require ReplyCommand {@link com.nahuasuan.corelibrary.mvvm.command.ReplyCommand } to deal with view click event. -->
+    <attr name="clickCommand" format="reference" />
+    <!-- require ReplyCommand<Boolean> {@link com.nahuasuan.corelibrary.mvvm.command.ReplyCommand } to deal with view focus change event.
+     ReplyCommand would has params which means if view hasFocus.-->
+    <attr name="onFocusChangeCommand" format="reference" />
+
+    <!-- Banner-->
+    <attr name="bannerImagesUrl"/>
+    <attr name="bannerData"/>
+    <attr name="bannerClickCommand"/>
+    <attr name="bannerPlaceholder" format="reference"></attr>
+
+    <declare-styleable name="View">
+
+        <!-- require ReplyCommand {@link com.nahuasuan.corelibrary.mvvm.command.ReplyCommand } to deal with view click event. -->
+        <attr name="clickCommand" />
+        <!-- require ReplyCommand<Boolean> {@link com.nahuasuan.corelibrary.mvvm.command.ReplyCommand } to deal with view focus change event.
+         ReplyCommand would has params which means if view hasFocus.-->
+        <attr name="onFocusChangeCommand" />
+        <!-- require ReplyCommand<MotionEvent> -->
+        <attr name="onTouchCommand" />
+    </declare-styleable>
+
+
+    <declare-styleable name="AdapterView">
+        <!-- require ItemView {@link me.tatarka.bindingcollectionadapter.ItemView} or ItemViewSelector {{@link me.tatarka.bindingcollectionadapter.ItemViewSelector}.} -->
+        <attr name="itemView" />
+        <!-- require List<ViewModel> bind to ItemView to presentation.-->
+        <attr name="items" />
+        <!-- require a adapter which type of BindingRecyclerViewAdapter<T> to AdapterView-->
+        <attr name="adapter" />
+        <attr name="dropDownItemView" format="reference" />
+        <attr name="itemIds" format="reference" />
+        <attr name="itemIsEnabled" format="reference" />
+        <!-- require ReplyCommand<Integer> -->
+        <attr name="onScrollStateChangedCommand" />
+        <!-- require ReplyCommand<ListViewScrollDataWrapper> -->
+        <attr name="onScrollChangeCommand" />
+        <!-- require ReplyCommand<Integer> count of list items-->
+        <attr name="onLoadMoreCommand" format="reference" />
+
+
+    </declare-styleable>
+
+    <declare-styleable name="TextView">
+        <attr name="clickCommand" />
+        <!-- require boolean value to decide whether requestFocus for view. -->
+        <attr name="requestFocus" />
+        <!--require ReplyCommand<TextChangeDataWrapper> -->
+        <attr name="beforeTextChangedCommand" format="reference" />
+        <!--require ReplyCommand<TextChangeDataWrapper> -->
+        <attr name="onTextChangedCommand" format="reference" />
+        <!--require ReplyCommand<String> -->
+        <attr name="afterTextChangedCommand" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ImageView">
+        <attr name="clickCommand" />
+        <!--  load bitmap from uri(string type) -->
+        <attr name="uri" />
+        <!--width for ResizeOptions (use Fresco to load bitmap). -->
+        <attr name="request_width" format="integer" />
+        <!--height for ResizeOptions (use Fresco to load bitmap). -->
+        <attr name="request_height" format="integer" />
+        <attr name="placeholderImageRes" format="reference|color" />
+        <!--  require ReplyCommand<Bitmap> See {@link @link com.nahuasuan.corelibrary.mvvm.command.ReplyCommand} -->
+        <attr name="onSuccessCommand" format="reference" />
+        <!--require ReplyCommand<CloseableReference<CloseableImage>> See {@link com.nahuasuan.corelibrary.mvvm.command.ReplyCommand} -->
+        <attr name="onFailureCommand" format="reference" />
+
+    </declare-styleable>
+
+    <declare-styleable name="ViewGroup">
+        <attr name="clickCommand" />
+        <!-- require ItemView {@link me.tatarka.bindingcollectionadapter.ItemView} or ItemViewSelector {{@link me.tatarka.bindingcollectionadapter.ItemViewSelector}.} -->
+        <attr name="itemView" />
+        <!-- require List<ViewModel> bind to ItemView to presentation.-->
+        <attr name="viewModels" format="reference" />
+
+    </declare-styleable>
+
+    <declare-styleable name="RecyclerView" parent="AdapterView">
+
+    </declare-styleable>
+
+    <declare-styleable name="ListView" parent="AdapterView">
+        <!--require ReplyCommand<Integer> integer mean to position where is clicked! -->
+        <attr name="onListViewItemClickCommand" format="reference" />
+        <attr name="onXListViewItemClickCommand" format="reference"/>
+        <attr name="xListViewLoadEnable" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="GridView" parent="AdapterView">
+        <attr name="onGridViewItemClickCommand" format="reference"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="ViewPager">
+        <!-- require ItemView {@link me.tatarka.bindingcollectionadapter.ItemView} or ItemViewSelector {{@link me.tatarka.bindingcollectionadapter.ItemViewSelector}.} -->
+        <attr name="itemView" />
+        <!-- require List<ViewModel> bind to ItemView to presentation.-->
+        <attr name="items" />
+        <!-- require a adapter which type of BindingRecyclerViewAdapter<T> to AdapterView-->
+        <attr name="adapter" />
+        <!-- require PageTitles<T>-->
+        <attr name="pageTitles" format="reference" />
+        <!--require ReplyCommand<ViewPagerDataWrapper> -->
+        <attr name="onPageScrolledCommand" format="reference" />
+        <!--require ReplyCommand<Integer> -->
+        <attr name="onPageSelectedCommand" format="reference" />
+        <!--require ReplyCommand<Integer> -->
+        <attr name="onPageScrollStateChangedCommand" format="reference" />
+
+    </declare-styleable>
+
+    <declare-styleable name="NestedScrollView">
+        <!-- require ReplyCommand<NestScrollDataWrapper> -->
+        <attr name="onScrollChangeCommand" />
+    </declare-styleable>
+
+    <declare-styleable name="SimpleDraweeView">
+        <!-- require String to load Image"-->
+        <attr name="uri" />
+    </declare-styleable>
+
+    <declare-styleable name="ScrollView">
+        <!-- require ReplyCommand<ScrollDataWrapper> -->
+        <attr name="onScrollChangeCommand" />
+    </declare-styleable>
+
+    <!--<declare-styleable name="Banner">-->
+        <!--<attr name="imagesUrl"/>-->
+    <!--</declare-styleable>-->
+
+    <declare-styleable name="SwipeRefreshLayout">
+        <!-- require RelayCommand -->
+        <attr name="onRefreshCommand" format="reference" />
+        <attr name="swipeLayoutRefreshing" format="boolean"></attr>
+        <attr name="onSwipeRefreshListViewLoadCommand" format="reference"></attr>
+        <attr name="swipeLayoutListViewLoading" format="boolean"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="WebView">
+        <!-- require String render to html show in webview-->
+        <attr name="render" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+        <attr name="civ_place_holder_image" format="reference"></attr>
+    </declare-styleable>
+    <attr name="circleImageUri"></attr>
+    <declare-styleable name="ClearEditText">
+        <!-- 清除按钮的图标 -->
+        <attr name="iconClear" format="reference"/>
+    </declare-styleable>
+    <attr name="editTextSearchCommand"></attr>
+
+    <declare-styleable name="FlowLayout">
+        <attr name="auto_select_effect" format="boolean"></attr>
+        <attr name="max_select" format="integer"></attr>
+        <attr name="gravity">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+    <attr name="customShoppingCartTagList"/>
+    <attr name="customShoppingCartTitleList"/>
+    <attr name="customShoppingCartTagItemView"/>
+    <declare-styleable name="BGABanner">
+        <!-- 指示点容器背景 -->
+        <attr name="banner_pointContainerBackground" format="reference|color" />
+        <!-- 指示点背景 -->
+        <attr name="banner_pointDrawable" format="reference" />
+        <!-- 指示点容器左右内间距 -->
+        <attr name="banner_pointContainerLeftRightPadding" format="dimension" />
+        <!-- 指示点上下外间距 -->
+        <attr name="banner_pointTopBottomMargin" format="dimension" />
+        <!-- 指示点左右外间距 -->
+        <attr name="banner_pointLeftRightMargin" format="dimension" />
+        <!-- 指示器的位置 -->
+        <attr name="banner_indicatorGravity">
+            <flag name="top" value="0x30" />
+            <flag name="bottom" value="0x50" />
+            <flag name="left" value="0x03" />
+            <flag name="right" value="0x05" />
+            <flag name="center_horizontal" value="0x01" />
+        </attr>
+        <!-- 是否开启自动轮播 -->
+        <attr name="banner_pointAutoPlayAble" format="boolean" />
+        <!-- 自动轮播的时间间隔 -->
+        <attr name="banner_pointAutoPlayInterval" format="integer" />
+        <!-- 页码切换过程的时间长度 -->
+        <attr name="banner_pageChangeDuration" format="integer" />
+        <!-- 页面切换的动画效果 -->
+        <attr name="banner_transitionEffect" format="enum">
+            <enum name="defaultEffect" value="0" />
+            <enum name="alpha" value="1" />
+            <enum name="rotate" value="2" />
+            <enum name="cube" value="3" />
+            <enum name="flip" value="4" />
+            <enum name="accordion" value="5" />
+            <enum name="zoomFade" value="6" />
+            <enum name="fade" value="7" />
+            <enum name="zoomCenter" value="8" />
+            <enum name="zoomStack" value="9" />
+            <enum name="stack" value="10" />
+            <enum name="depth" value="11" />
+            <enum name="zoom" value="12" />
+        </attr>
+        <!-- 提示文案的文字颜色 -->
+        <attr name="banner_tipTextColor" format="reference|color" />
+        <!-- 提示文案的文字大小 -->
+        <attr name="banner_tipTextSize" format="dimension" />
+        <!-- 加载网络数据时覆盖在BGABanner最上层的占位图 -->
+        <attr name="banner_placeholderDrawable" format="reference" />
+        <!-- 是否是数字指示器 -->
+        <attr name="banner_isNumberIndicator" format="boolean" />
+        <!-- 数字指示器文字颜色 -->
+        <attr name="banner_numberIndicatorTextColor" format="reference|color" />
+        <!-- 数字指示器文字大小 -->
+        <attr name="banner_numberIndicatorTextSize" format="dimension" />
+        <!-- 数字指示器背景 -->
+        <attr name="banner_numberIndicatorBackground" format="reference" />
+        <!-- 当只有一页数据时是否显示指示器，默认值为false -->
+        <attr name="banner_isNeedShowIndicatorOnOnlyOnePage" format="boolean" />
+        <!-- 是否显示指示器，默认值为true -->
+        <attr name="banner_isNeedShowIndicator" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="Spinner">
+        <attr name="onSpinnerSelectCommand" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="PullToRefreshListView">
+        <attr name="android:dividerHeight" />
+        <attr name="android:divider" />
+    </declare-styleable>
+</resources>
