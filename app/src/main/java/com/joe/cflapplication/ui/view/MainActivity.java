@@ -23,6 +23,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements I
      */
     public ReplyCommand onClickOrderBtnCommand = new ReplyCommand(() -> {
         UIHelper.showShortToast(this, "订单");
+
+
     });
 
     /**
