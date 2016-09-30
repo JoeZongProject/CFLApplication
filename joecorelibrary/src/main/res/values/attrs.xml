@@ -103,6 +103,7 @@
     <declare-styleable name="ListView" parent="AdapterView">
         <!--require ReplyCommand<Integer> integer mean to position where is clicked! -->
         <attr name="onListViewItemClickCommand" format="reference" />
+        <attr name="onItemLongClickCommand" format="reference"/>
         <attr name="onXListViewItemClickCommand" format="reference"/>
         <attr name="xListViewLoadEnable" format="boolean"/>
     </declare-styleable>

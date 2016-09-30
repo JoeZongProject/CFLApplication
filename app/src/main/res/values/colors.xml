@@ -16,4 +16,5 @@
     <color name="mainColor">#10A1B4</color>
     <color name="textHintColor">#dedede</color>
     <color name="listItemClickColor">#e5e5e5</color>
+    <color name="red">#f70000</color>
 </resources>

@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.joe.cflapplication.ui.view.MainActivity" />
+            type="com.joe.cflapplication.ui.view.common.MainActivity" />
     </data>
 
     <LinearLayout

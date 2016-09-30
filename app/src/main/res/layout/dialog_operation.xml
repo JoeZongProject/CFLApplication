@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.joe.cflapplication.ui.dialog.DialogOperation" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="你想做什么"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="你想做什么" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/mainColor" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_maincolor_corner1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="更新"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            bind:clickCommand="@{viewModel.onClickUpdateBtnCommand}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_red_corner1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="删除"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            bind:clickCommand="@{viewModel.onClickDeleteBtnCommand}" />
+    </LinearLayout>
+</layout>
+

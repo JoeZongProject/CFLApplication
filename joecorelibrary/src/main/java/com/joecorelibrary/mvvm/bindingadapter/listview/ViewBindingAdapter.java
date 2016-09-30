@@ -60,6 +60,23 @@ public final class ViewBindingAdapter {
         });
     }
 
+    @BindingAdapter(value = {"onItemLongClickCommand"}, requireAll = false)
+    public static void onItemLongClickCommand(final ListView listView, final ReplyCommand<Integer> onItemLongClickCommand) {
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                if (onItemLongClickCommand != null) {
+                    int count = listView.getAdapter().getCount();
+                    Class itemClass = listView.getAdapter().getItem(position).getClass();
+                    if (position < count && !itemClass.equals(Object.class)) {
+                        onItemLongClickCommand.execute(position);
+                    }
+                }
+                return true;
+            }
+        });
+    }
+
     @BindingAdapter(value = {"onXListViewItemClickCommand"}, requireAll = false)
     public static void onXListViewItemClickCommand(final XListView listView, final ReplyCommand<Integer> onItemClickCommand) {
         listView.setOnItemClickListener((parent, view, position, id) -> {

@@ -1,14 +1,19 @@
-package com.joe.cflapplication.ui.view;
+package com.joe.cflapplication.ui.view.common;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.joe.cflapplication.R;
 import com.joe.cflapplication.databinding.ActivityMainBinding;
 import com.joe.cflapplication.ui.base.BaseActivity;
 import com.joe.cflapplication.ui.base.annotation.Layout;
+import com.joe.cflapplication.ui.view.foodmenu.FoodMenuActivity;
+import com.joe.cflapplication.ui.view.order.MonthOrderActivity;
 import com.joecorelibrary.mvvm.base.IViewModel;
 import com.joecorelibrary.mvvm.command.ReplyCommand;
 import com.joecorelibrary.util.UIHelper;
+
+import cn.bmob.v3.Bmob;
 
 @Layout(id = R.layout.activity_main, title = "首页")
 public class MainActivity extends BaseActivity<ActivityMainBinding> implements IViewModel {
@@ -16,22 +21,21 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements I
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bmob.initialize(this, "4160b1c71ea4ad728df4cb8ebc69c3cb");
     }
 
     /**
      * 订单
      */
     public ReplyCommand onClickOrderBtnCommand = new ReplyCommand(() -> {
-        UIHelper.showShortToast(this, "订单");
-
-
+        startActivity(new Intent(this, MonthOrderActivity.class));
     });
 
     /**
      * 菜单
      */
     public ReplyCommand onClickFoodMenuBtnCommand = new ReplyCommand(() -> {
-        UIHelper.showShortToast(this, "菜单");
+        startActivity(new Intent(this, FoodMenuActivity.class));
     });
 
     /**
@@ -40,4 +44,21 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements I
     public ReplyCommand onClickCountBtnCommand = new ReplyCommand(() -> {
         UIHelper.showShortToast(this, "统计");
     });
+
+    @Override
+    public void onBackPressed() {
+        exit();
+    }
+
+    private long exitTime = 0;
+
+    public void exit() {
+        if ((System.currentTimeMillis() - exitTime) > 2000) {
+            UIHelper.showShortToast(this, "再按一次才能退出，脑残");
+            exitTime = System.currentTimeMillis();
+        } else {
+            finish();
+            android.os.Process.killProcess(android.os.Process.myPid());
+        }
+    }
 }

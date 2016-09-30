@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.joe.cflapplication.ui.view.foodmenu.FoodMenuActivity"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/backgroudColor"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionbarHeight">
+            <include layout="@layout/layout_title_with_back"/>
+            <ImageView
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:id="@+id/imageButton"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_add"
+                android:layout_gravity="right"
+                />
+        </FrameLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:listSelector="@color/transparent"
+            android:cacheColorHint="@color/transparent"
+            android:scrollbars="none"
+            android:divider="@color/transparent"
+            bind:itemView="@{viewModel.foodMenuItemView}"
+            bind:items="@{viewModel.itemFoodMenuViewModels}"
+            bind:onItemLongClickCommand="@{viewModel.onItemLongClickCommand}"
+            />
+    </LinearLayout>
+</layout>

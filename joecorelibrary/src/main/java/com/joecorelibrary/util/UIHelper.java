@@ -37,6 +37,15 @@ public class UIHelper {
         mProgressDialog.setCancelable(true);
         mProgressDialog.show();
     }
+    public static void showDefaultProgress(Context context){
+        if(mProgressDialog != null){
+            mProgressDialog.cancel();
+        }
+        mProgressDialog = new ProgressDialog(context);
+        mProgressDialog.setMessage("正在加载数据...");
+        mProgressDialog.setCancelable(true);
+        mProgressDialog.show();
+    }
 
     public static void hideProgress(){
         if (mProgressDialog != null && mProgressDialog.isShowing()) {
