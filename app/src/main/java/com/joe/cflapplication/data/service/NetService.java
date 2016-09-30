@@ -3,8 +3,14 @@ package com.joe.cflapplication.data.service;
 import android.app.ProgressDialog;
 import android.content.Context;
 
+import com.joe.cflapplication.data.model.foodmenu.FoodMenu;
+
+import java.util.List;
+
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
 
@@ -96,6 +102,18 @@ public class NetService<T extends BmobObject> {
             public void done(BmobException e) {
                 dismissProgress();
                 listener.onResult(e == null, "", e == null ? "" : e.getMessage());
+            }
+        });
+    }
+
+    public void queryAll(BmobQuery<T> query, NetCallbackBase listener){
+        showProgress();
+        query.order("-createdAt");
+        query.findObjects(new FindListener<T>() {
+            @Override
+            public void done(List<T> list, BmobException e) {
+                dismissProgress();
+                listener.onResult(e == null, list, e == null ? "" : e.getMessage());
             }
         });
     }

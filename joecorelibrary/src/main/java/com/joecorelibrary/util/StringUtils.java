@@ -18,7 +18,10 @@ package com.joecorelibrary.util;
 
 import android.text.TextUtils;
 
+import java.sql.Date;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -413,6 +416,31 @@ public class StringUtils {
     public static String DecimalFormat(double num, String type) {
         DecimalFormat df = new DecimalFormat(type);
         return df.format(num);
+    }
+
+    /**
+     * 格式化时期
+     * @param date
+     * @param formter
+     * @return
+     */
+    public static String dateFormater(Date date, String formter){
+        SimpleDateFormat format = new SimpleDateFormat(formter);
+        return format.format(date);
+    }
+
+    /**
+     * 获取当前Day
+     * @return
+     */
+    public static String getCurrentDay(){
+        Calendar c = Calendar.getInstance();
+//       year = c.get(Calendar.YEAR)
+//        month = c.grt(Calendar.MONTH)
+//        day = c.get(Calendar.DAY_OF_MONTH)
+//        hour = c.get(Calendar.HOUR_OF_DAY);
+//        minute = c.get(Calendar.MINUTE)
+        return (c.get(Calendar.DAY_OF_MONTH)+1) + "";
     }
 
 }

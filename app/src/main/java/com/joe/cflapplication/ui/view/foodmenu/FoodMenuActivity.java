@@ -51,11 +51,11 @@ public class FoodMenuActivity extends BaseActivity implements IViewModel {
             NetService.create(this)
                     .addDefaultProgressing()
                     .addParams(foodMenu)
-                    .save(new NetCallbackBase(){
+                    .save(new NetCallbackBase<String>(){
                         @Override
-                        public void onResult(boolean isSuccess, Object response, String errorMsg) {
+                        public void onResult(boolean isSuccess, String response, String errorMsg) {
                             if(isSuccess){
-                                foodMenu.setObjectId(String.valueOf(response));
+                                foodMenu.setObjectId(response);
                                 itemFoodMenuViewModels.add(0,new ItemFoodMenuViewModel(foodMenu));
                             }else{
                                 UIHelper.showShortToast(FoodMenuActivity.this, "菜品添加失败" + errorMsg);
