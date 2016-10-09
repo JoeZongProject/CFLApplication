@@ -28,6 +28,7 @@ import java.lang.reflect.Method;
  * Email-joe_zong@163.com
  */
 public class BaseFragmentActivity<DataBinding extends ViewDataBinding> extends CoreBaseFragmentActivity implements Handler.Callback {
+    public String TAG = getClass().getSimpleName();
     private Handler handler;
     private DataBinding dataBinding;
     private IViewModel iViewModel;

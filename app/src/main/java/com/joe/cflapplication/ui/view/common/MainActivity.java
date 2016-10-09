@@ -3,10 +3,12 @@ package com.joe.cflapplication.ui.view.common;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.joe.cflapplication.MyApplication;
 import com.joe.cflapplication.R;
 import com.joe.cflapplication.databinding.ActivityMainBinding;
 import com.joe.cflapplication.ui.base.BaseActivity;
 import com.joe.cflapplication.ui.base.annotation.Layout;
+import com.joe.cflapplication.ui.view.about.AboutActivity;
 import com.joe.cflapplication.ui.view.foodmenu.FoodMenuActivity;
 import com.joe.cflapplication.ui.view.order.MonthOrderActivity;
 import com.joecorelibrary.mvvm.base.IViewModel;
@@ -22,6 +24,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements I
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bmob.initialize(this, "4160b1c71ea4ad728df4cb8ebc69c3cb");
+        MyApplication.getInstance().setFoodMenuList(null);
     }
 
     /**
@@ -42,8 +45,16 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements I
      * 统计
      */
     public ReplyCommand onClickCountBtnCommand = new ReplyCommand(() -> {
-        UIHelper.showShortToast(this, "统计");
+        UIHelper.showShortToast(this, "别急，还在开发呢...");
     });
+
+    /**
+     * 关于
+     */
+    public ReplyCommand onClickAboutBtnCommand = new ReplyCommand(() -> {
+        startActivity(new Intent(this, AboutActivity.class));
+    });
+
 
     @Override
     public void onBackPressed() {

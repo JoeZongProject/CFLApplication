@@ -1,11 +1,14 @@
 package com.joe.cflapplication.data.service;
 
+import android.accounts.NetworkErrorException;
 import android.app.ProgressDialog;
 import android.content.Context;
 
 import com.joe.cflapplication.data.model.foodmenu.FoodMenu;
 
+import java.net.SocketTimeoutException;
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.BmobQuery;
@@ -98,6 +101,17 @@ public class NetService<T extends BmobObject> {
     public void update(NetCallbackBase listener){
         showProgress();
         request.update(new UpdateListener() {
+            @Override
+            public void done(BmobException e) {
+                dismissProgress();
+                listener.onResult(e == null, "", e == null ? "" : e.getMessage());
+            }
+        });
+    }
+
+    public void update(String objId, NetCallbackBase listener){
+        showProgress();
+        request.update(objId, new UpdateListener() {
             @Override
             public void done(BmobException e) {
                 dismissProgress();

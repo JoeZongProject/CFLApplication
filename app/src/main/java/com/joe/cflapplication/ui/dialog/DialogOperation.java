@@ -13,6 +13,8 @@ import com.joecorelibrary.mvvm.command.ReplyCommand;
 
 /**
  * @Autor zongdongdong on 2016/9/30.
+ * 操作
+ * 更新和删除
  */
 
 public class DialogOperation extends Dialog{

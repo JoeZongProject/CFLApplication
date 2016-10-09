@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.joe.cflapplication.ui.dialog.DialogInputUserInfo"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="客户信息"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/mainColor" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_border1_gray_corner1"
+            android:hint="宿舍楼号"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:inputType="numberSigned"
+            android:text="@={viewModel.userAddress}"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_white_border1_gray_corner1"
+            android:hint="手机号"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:inputType="number"
+            android:text="@={viewModel.userMobile}"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp"
+            >
+
+            <TextView
+                android:id="@+id/txtvCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_gray_border1_gray_corner1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="取消"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                bind:clickCommand="@{viewModel.onClickCancelBtnCommand}"
+                />
+
+            <TextView
+                android:id="@+id/txtvConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_maincolor_corner1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                bind:clickCommand="@{viewModel.onClickConfirmBtnCommand}"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
+

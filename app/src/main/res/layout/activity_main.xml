@@ -94,5 +94,31 @@
                 android:layout_marginLeft="50dp"
                 android:src="@drawable/icon_main_count" />
         </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            bind:cardElevation="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/pressed_list_item"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="关于"
+                android:textColor="@color/mainColor"
+                android:textSize="18sp"
+                bind:clickCommand="@{viewModel.onClickAboutBtnCommand}" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="50dp"
+                android:src="@drawable/icon_main_about" />
+        </android.support.v7.widget.CardView>
     </LinearLayout>
 </layout>

@@ -9,6 +9,7 @@ import cn.bmob.v3.BmobObject;
 public class FoodMenu extends BmobObject {
     private String foodName;
     private String foodPrice;
+    private String count = "0";
 
     public String getFoodName() {
         return foodName;
@@ -24,5 +25,13 @@ public class FoodMenu extends BmobObject {
 
     public void setFoodPrice(String foodPrice) {
         this.foodPrice = foodPrice;
+    }
+
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
     }
 }

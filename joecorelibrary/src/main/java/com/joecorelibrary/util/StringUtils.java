@@ -18,10 +18,10 @@ package com.joecorelibrary.util;
 
 import android.text.TextUtils;
 
-import java.sql.Date;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -440,7 +440,35 @@ public class StringUtils {
 //        day = c.get(Calendar.DAY_OF_MONTH)
 //        hour = c.get(Calendar.HOUR_OF_DAY);
 //        minute = c.get(Calendar.MINUTE)
-        return (c.get(Calendar.DAY_OF_MONTH)+1) + "";
+        return (c.get(Calendar.DAY_OF_MONTH)) + "";
+    }
+
+    /**
+     * 获取当前Day
+     * @return
+     */
+    public static int getCurrentYear(){
+        Calendar c = Calendar.getInstance();
+//       year = c.get(Calendar.YEAR)
+//        month = c.grt(Calendar.MONTH)
+//        day = c.get(Calendar.DAY_OF_MONTH)
+//        hour = c.get(Calendar.HOUR_OF_DAY);
+//        minute = c.get(Calendar.MINUTE)
+        return (c.get(Calendar.YEAR));
+    }
+
+    /**
+     * 获取当前Day
+     * @return
+     */
+    public static int getCurrentMonth(){
+        Calendar c = Calendar.getInstance();
+//       year = c.get(Calendar.YEAR)
+//        month = c.grt(Calendar.MONTH)
+//        day = c.get(Calendar.DAY_OF_MONTH)
+//        hour = c.get(Calendar.HOUR_OF_DAY);
+//        minute = c.get(Calendar.MINUTE)
+        return (c.get(Calendar.MONTH)+1);
     }
 
 }

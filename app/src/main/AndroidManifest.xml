@@ -32,7 +32,9 @@
         </activity>
         <activity android:name=".ui.view.order.MonthOrderActivity" />
         <activity android:name=".ui.view.order.DayOrderActivity" />
-        <activity android:name=".ui.view.foodmenu.FoodMenuActivity"/>
+        <activity android:name=".ui.view.foodmenu.FoodMenuActivity" />
+        <activity android:name=".ui.view.order.AddOrderActivity" />
+        <activity android:name=".ui.view.about.AboutActivity"></activity>
     </application>
 
 </manifest>

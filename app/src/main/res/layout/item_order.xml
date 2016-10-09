@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.joe.cflapplication.ui.view.order.item.ItemOrderViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:descendantFocusability="blocksDescendants"
+        >
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            bind:cardCornerRadius="2dp"
+            bind:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/pressed_list_item"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{viewModel.customInfo}"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        tools:text="4#18862323144" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/mainColor"
+                        android:textSize="12sp"
+                        android:text="@{viewModel.orderStateDes}"
+                        tools:text="刚下单" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/actionBarLine" />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@{viewModel.orderFoodMenus}"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        tools:text="青椒肉丝饭" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="5dp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="¥"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@{viewModel.finalPrice}"
+                            android:textColor="@color/red"
+                            android:textSize="16sp"
+                            tools:text="15"
+                            android:layout_marginLeft="4dp"
+                            />
+                    </LinearLayout>
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="right|center_vertical"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:textColor="@color/gray"
+                        android:text="@{viewModel.orderCreateAt}"
+                        />
+                    <TextView
+                        android:id="@+id/txtvCancelOrder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_red_corner3"
+                        android:padding="4dp"
+                        android:text="取消订单"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="@{viewModel.orderState == 0 ? View.VISIBLE : View.GONE}" />
+
+                    <TextView
+                        android:id="@+id/txtvCompleteOrder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/bg_maincolor_corner3"
+                        android:padding="4dp"
+                        android:text="完成订单"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="@{viewModel.orderState == 0 ? View.VISIBLE : View.GONE}" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </FrameLayout>
+</layout>
